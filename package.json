@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "build": "webpack",
     "watch": "webpack --watch --mode=development",
-    "serve": "webpack serve"
+    "serve": "webpack && npx http-server dist"
   },
   "repository": {
     "type": "git",
@@ -21,21 +21,19 @@
   },
   "homepage": "https://github.com/cyonii/shooter#readme",
   "devDependencies": {
-    "@babel/core": "^7.14.0",
-    "@babel/preset-env": "^7.14.1",
-    "babel-eslint": "^10.1.0",
+    "@babel/core": "^7.14.3",
+    "@babel/plugin-proposal-object-rest-spread": "^7.14.4",
+    "@babel/preset-env": "^7.14.4",
     "babel-loader": "^8.2.2",
-    "css-loader": "^5.2.4",
+    "copy-webpack-plugin": "^9.0.0",
     "file-loader": "^6.2.0",
     "html-loader": "^2.1.2",
     "html-webpack-plugin": "^5.3.1",
-    "mini-css-extract-plugin": "^1.6.0",
-    "sass-loader": "^11.0.1",
-    "webpack": "^5.36.2",
-    "webpack-cli": "^4.6.0",
-    "webpack-dev-server": "^3.11.2"
+    "webpack": "^5.38.1",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev": "^1.1.1"
   },
   "dependencies": {
-    "phaser": "^3.54.0"
+    "phaser": "^3.55.2"
   }
 }
