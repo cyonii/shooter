@@ -29,6 +29,7 @@ module.exports = {
         use: [
           {
             loader: 'html-loader',
+            options: { sources: false },
           },
         ],
       },
