@@ -10,12 +10,13 @@ export default class extends Phaser.Scene {
   }
 
   create() {
-    this.add
-      .image(this.cameras.main.centerX, this.cameras.main.centerY - 100, 'phaserLogo')
-      .setScale(0.8);
+    const cameraX = this.cameras.main.centerX;
+    const cameraY = this.cameras.main.centerY;
 
-    this.add;
-    const title = this.add.text(0, 0, 'Space Shooter');
+    this.add.image(cameraX, cameraY - 100, 'phaserLogo').setScale(0.8);
+
+    const gameTitle = this.add.text(0, 0, 'Space Shooter', { fontSize: 32 });
+    gameTitle.setPosition(cameraX - gameTitle.width / 2, cameraY + 100);
 
     setTimeout(() => {
       // this.scene.start('Preload');
