@@ -1,4 +1,6 @@
 import Boot from './scenes/boot';
+import Preload from './scenes/preload';
+// import GameScene from './scenes/game';
 
 const gameContainer = document.getElementById('game');
 
@@ -9,7 +11,7 @@ export default (() => {
     height: gameContainer.clientHeight,
     parent: 'game',
     title: 'Shooter',
-    scene: [Boot],
+    scene: [Boot, Preload],
     physics: {
       default: 'arcade',
       arcade: {
