@@ -8,7 +8,7 @@ export default class extends Phaser.Scene {
   }
 
   preload() {
-    this.load.image('playerShip', 'assets/ships/playerSpaceship.png');
+    this.load.image('playerShip', 'assets/img/playerShip.png');
 
     const cameraX = (state.cameraX = this.cameras.main.centerX);
     const cameraY = (state.cameraY = this.cameras.main.centerY);
