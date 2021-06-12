@@ -44,6 +44,7 @@ export default class extends Phaser.Scene {
     });
 
     // Player and enemy collider
+    this.physics.add.collider(this.enemies, this.player, () => {});
     this.physics.add.collider(this.enemies, this.platform, function (_, enemy) {
       enemy.destroy();
     });
