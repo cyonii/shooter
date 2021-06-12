@@ -29,13 +29,12 @@ export default class extends Phaser.Scene {
     );
     this.physics.add.staticGroup(this.platform);
 
-    // Bugs
-    this.bugs = this.physics.add.group();
-
+    // Enemies
+    this.enemies = this.physics.add.group();
     this.time.addEvent({
       delay: 300,
       callback: () => {
-        this.bugs
+        this.enemies
           .create(Math.random() * this.cameras.main.width, -20, 'enemy')
           .setScale(0.3)
           .setFlipY();
@@ -44,10 +43,9 @@ export default class extends Phaser.Scene {
       loop: true,
     });
 
-    // Player and bug collider
-    this.physics.add.collider(this.bugs, this.platform, function (_, bug) {
-      console.log('touched platform');
-      bug.destroy();
+    // Player and enemy collider
+    this.physics.add.collider(this.enemies, this.platform, function (_, enemy) {
+      enemy.destroy();
     });
 
     // Cursor
@@ -56,16 +54,17 @@ export default class extends Phaser.Scene {
 
   update() {
     if (this.cursors.left.isDown) {
-      this.player.x -= 5;
-    }
-    if (this.cursors.right.isDown) {
-      this.player.x += 5;
-    }
-    if (this.cursors.down.isDown) {
-      this.player.y += 5;
-    }
-    if (this.cursors.up.isDown) {
+      // this.player.x -= 5;
+      this.player.setVelocityX(-200);
+    } else if (this.cursors.right.isDown) {
+      // this.player.x += 5;
+      this.player.setVelocityX(200);
+    } else if (this.cursors.down.isDown) {
+      this.player.setVelocityY(+160);
+    } else if (this.cursors.up.isDown) {
       this.player.setVelocityY(-160);
+    } else {
+      this.player.setVelocityX(0);
     }
   }
 }
