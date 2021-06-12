@@ -3,6 +3,7 @@ import Phaser from 'phaser';
 export default class extends Phaser.Scene {
   constructor() {
     super({ key: 'Game' });
+    this.score = 0;
   }
 
   preload() {
@@ -12,6 +13,9 @@ export default class extends Phaser.Scene {
   }
 
   create() {
+    // Scores
+    this.scoreText = this.add.text(5, 5, `Score: ${this.score}`);
+
     // Player
     this.player = this.physics.add
       .sprite(0, 0, 'player')
@@ -73,6 +77,7 @@ export default class extends Phaser.Scene {
     this.physics.add.collider(this.enemies, this.lasers, (enemy, laser) => {
       enemy.destroy();
       laser.destroy();
+      this.score += 5;
     });
     this.physics.add.collider(this.sky, this.lasers, (_, laser) => {
       laser.destroy();
@@ -98,5 +103,8 @@ export default class extends Phaser.Scene {
     } else {
       this.player.setVelocityX(0);
     }
+
+    // Update score
+    this.scoreText.setText(`Score: ${this.score}`);
   }
 }
