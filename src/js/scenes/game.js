@@ -82,8 +82,20 @@ export default class extends Phaser.Scene {
     this.physics.add.collider(this.sky, this.lasers, (_, laser) => {
       laser.destroy();
     });
-    this.physics.add.collider(this.player, this.enemies, () => {});
-    this.physics.add.collider(this.ground, this.enemies, function (_, enemy) {
+    this.physics.add.collider(this.player, this.enemies, () => {
+      this.scene.pause();
+
+      const gameOverText = this.add.text(0, 0, 'GAME OVER', {
+        fontSize: 24,
+        backgroundColor: 'red',
+        padding: 10,
+      });
+      gameOverText.setPosition(
+        this.cameras.main.centerX - gameOverText.width / 2,
+        this.cameras.main.centerY,
+      );
+    });
+    this.physics.add.collider(this.ground, this.enemies, (_, enemy) => {
       enemy.destroy();
     });
 
