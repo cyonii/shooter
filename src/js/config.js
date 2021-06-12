@@ -11,6 +11,8 @@ export default (() => {
     height: gameContainer.clientHeight,
     parent: 'game',
     title: 'Shooter',
+    disableContextMenu: true,
+    backgroundColor: 0x00000,
     scene: [BootScene, PreloadScene, GameScene],
     physics: {
       default: 'arcade',
