@@ -22,7 +22,7 @@ export default class extends Phaser.Scene {
     });
 
     setTimeout(() => {
-      this.scene.start('Game');
+      this.scene.start('Title');
     }, 1500);
   }
 

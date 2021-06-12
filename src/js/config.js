@@ -1,6 +1,7 @@
 import BootScene from './scenes/boot';
 import PreloadScene from './scenes/preload';
 import GameScene from './scenes/game';
+import TitleScene from './scenes/title';
 
 const gameContainer = document.getElementById('game');
 
@@ -13,7 +14,7 @@ export default (() => {
     title: 'Shooter',
     disableContextMenu: true,
     backgroundColor: 0x00000,
-    scene: [BootScene, PreloadScene, GameScene],
+    scene: [BootScene, PreloadScene, TitleScene, GameScene],
     physics: {
       default: 'arcade',
       arcade: {
