@@ -1,6 +1,7 @@
 import BootScene from './scenes/boot';
 import PreloadScene from './scenes/preload';
 import TitleScene from './scenes/title';
+import CreditsScene from './scenes/credits';
 import GameScene from './scenes/game';
 import ScoreboardScene from './scenes/scoreboard';
 
@@ -15,7 +16,7 @@ export default (() => {
     title: 'Shooter',
     disableContextMenu: true,
     backgroundColor: 0x00000,
-    scene: [BootScene, PreloadScene, TitleScene, GameScene, ScoreboardScene],
+    scene: [BootScene, PreloadScene, TitleScene, CreditsScene, GameScene, ScoreboardScene],
     physics: {
       default: 'arcade',
       arcade: {
