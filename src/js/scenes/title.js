@@ -18,5 +18,14 @@ export default class extends Phaser.Scene {
 
     playButton.setInteractive();
     playButton.on('pointerup', () => this.scene.start('Game'));
+
+    // Cursor
+    this.cursors = this.input.keyboard.createCursorKeys();
+  }
+
+  update() {
+    if (this.cursors.space.isDown) {
+      this.scene.start('Game');
+    }
   }
 }
