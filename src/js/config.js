@@ -1,3 +1,4 @@
+import Phaser from 'phaser';
 import BootScene from './scenes/boot';
 import PreloadScene from './scenes/preload';
 import TitleScene from './scenes/title';

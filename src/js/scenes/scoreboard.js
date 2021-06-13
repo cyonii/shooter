@@ -34,10 +34,7 @@ export default class extends Phaser.Scene {
             );
           });
       })
-      .catch((err) => {
-        console.log(err);
-        err;
-      });
+      .catch((err) => err);
 
     // Play again button
     const playButton = this.add

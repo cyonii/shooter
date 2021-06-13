@@ -1,5 +1,6 @@
 import Phaser from 'phaser';
 import leaderboard from '../api/leaderboard';
+
 export default class extends Phaser.Scene {
   constructor() {
     super({ key: 'Game' });
