@@ -38,10 +38,6 @@ Before running the application locally, the user will have to make sure of the f
 - Node JS Installed on your local machine. Please use [this link](https://nodejs.org/en/).
 - Installing NPM if not already installed.
 
-You also need to make sure that yarn is up to date
-
-- yarn install --check-files
-
 ### Getting Started
 
 #### Step 1
@@ -67,7 +63,7 @@ cd shooter
 Install all the dependencies by running the following command. Dependencies are just normal files and programs that are necessary to run the game.
 
 ```
-yarn install
+npm install
 ```
 
 #### Step 4
@@ -75,7 +71,7 @@ yarn install
 While you are in the root folder of the Game, which means that in the topmost folder of the game, run the following command to launch the game in your browser
 
 ```
-yarn serve
+npm run serve
 ```
 
 Alternatively, you can navigate to the dist folder and run index.html directly in your browser.
@@ -116,7 +112,7 @@ As mentioned above, the application uses jest as a primary test runner. To run t
 - Run the following command
 
 ```
-yarn test
+npm run test
 ```
 
 ## Authors
