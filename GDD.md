@@ -59,4 +59,4 @@ The Game contain the following assets:
 
 # Technology
 
-The Game is built with Javascropt Prgramming Langauges, and phaser.js 2d framework.
+The Game is built with Javascript Prgramming Langauges, and phaser.js 2d framework.
