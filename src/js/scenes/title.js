@@ -17,15 +17,23 @@ export default class extends Phaser.Scene {
     Phaser.Display.Align.In.Center(text, playButton);
 
     playButton.setInteractive();
-    playButton.on('pointerup', () => this.scene.start('Game'));
+    playButton.on('pointerup', () => {
+      if (localStorage.getItem('playerName')) {
+        this.scene.start('Game');
+      } else {
+        const playerForm = document.getElementById('playerForm');
+        playerForm.style.display = 'flex';
+        playerForm.onsubmit = (e) => {
+          e.preventDefault();
 
-    // Cursor
-    this.cursors = this.input.keyboard.createCursorKeys();
-  }
+          const playerName = document.getElementById('playerName').value;
 
-  update() {
-    if (this.cursors.space.isDown) {
-      this.scene.start('Game');
-    }
+          localStorage.setItem('playerName', playerName);
+          playerForm.style.display = 'none';
+
+          this.scene.start('Game');
+        };
+      }
+    });
   }
 }

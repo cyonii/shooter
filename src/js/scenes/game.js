@@ -1,5 +1,5 @@
 import Phaser from 'phaser';
-
+import leaderboard from '../api/leaderboard';
 export default class extends Phaser.Scene {
   constructor() {
     super({ key: 'Game' });
@@ -86,6 +86,13 @@ export default class extends Phaser.Scene {
     });
     this.physics.add.collider(this.player, this.enemies, () => {
       this.scene.pause();
+
+      // Post player score
+      leaderboard.postScore.call(this, {
+        user: localStorage.getItem('playerName'),
+        score: this.score,
+      });
+
       const gameOverText = this.add.text(0, 0, 'GAME OVER', {
         fontSize: 24,
         backgroundColor: 'red',

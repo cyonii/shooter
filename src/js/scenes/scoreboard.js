@@ -1,4 +1,5 @@
 import Phaser from 'phaser';
+import leaderboard from '../api/leaderboard';
 
 export default class extends Phaser.Scene {
   constructor() {
@@ -9,15 +10,43 @@ export default class extends Phaser.Scene {
     this.score = data.score;
   }
 
-  create() {
-    const scoreText = this.add.text(0, 0, `Score: ${this.score}`, { fontSize: 24 });
-    scoreText.setPosition(
-      this.cameras.main.centerX - scoreText.width / 2,
-      this.cameras.main.centerY,
-    );
+  preload() {
+    this.load.image('button', 'assets/img/blueButton.png');
+  }
 
-    setTimeout(() => {
-      this.scene.start('Title');
-    }, 2000);
+  create() {
+    const leaderboardList = this.add.text(0, 0, '');
+    let leaderboardText = `LEADERBOARD\n==============\n\n`;
+
+    leaderboard
+      .getScores()
+      .then((data) => {
+        data.result
+          .sort((a, b) => a.score - b.score)
+          .reverse()
+          .splice(0, 6)
+          .forEach((entry) => {
+            leaderboardText += entry.user + ': ' + entry.score + '\n';
+            leaderboardList.setText(leaderboardText);
+            leaderboardList.setPosition(
+              this.cameras.main.centerX - leaderboardList.width / 2,
+              this.cameras.main.centerY - leaderboardList.height / 2,
+            );
+          });
+      })
+      .catch((err) => {
+        console.log(err);
+        err;
+      });
+
+    // Play again button
+    const playButton = this.add
+      .sprite(this.cameras.main.centerX, this.cameras.main.centerY + 150, 'button')
+      .setInteractive();
+    const text = this.add.text(0, 0, 'Play', { fontSize: 24, fill: '#fff' });
+    Phaser.Display.Align.In.Center(text, playButton);
+
+    playButton.setInteractive();
+    playButton.on('pointerup', () => this.scene.start('Game'));
   }
 }
