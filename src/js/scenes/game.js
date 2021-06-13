@@ -3,6 +3,7 @@ import Phaser from 'phaser';
 export default class extends Phaser.Scene {
   constructor() {
     super({ key: 'Game' });
+    this.baseVelocity = 160;
     this.score = 0;
   }
 
@@ -51,7 +52,8 @@ export default class extends Phaser.Scene {
         this.enemies
           .create(Math.random() * this.cameras.main.width, -20, 'enemy')
           .setScale(0.3)
-          .setFlipY();
+          .setFlipY()
+          .setVelocityY(this.baseVelocity + this.score * 0.5);
       },
       callbackScope: this,
       loop: true,
@@ -84,7 +86,6 @@ export default class extends Phaser.Scene {
     });
     this.physics.add.collider(this.player, this.enemies, () => {
       this.scene.pause();
-
       const gameOverText = this.add.text(0, 0, 'GAME OVER', {
         fontSize: 24,
         backgroundColor: 'red',
@@ -104,14 +105,16 @@ export default class extends Phaser.Scene {
   }
 
   update() {
+    const velocity = (() => this.baseVelocity + this.score * 0.5)();
+
     if (this.cursors.left.isDown) {
-      this.player.setVelocityX(-200);
+      this.player.setVelocityX(-velocity);
     } else if (this.cursors.right.isDown) {
-      this.player.setVelocityX(200);
+      this.player.setVelocityX(velocity);
     } else if (this.cursors.down.isDown) {
-      this.player.setVelocityY(+160);
+      this.player.setVelocityY(+velocity);
     } else if (this.cursors.up.isDown) {
-      this.player.setVelocityY(-160);
+      this.player.setVelocityY(-velocity);
     } else {
       this.player.setVelocityX(0);
     }
