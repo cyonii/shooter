@@ -23,18 +23,6 @@ body {
   }
 }
 
-/* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) {
-}
-
-/* X-Large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
-}
-
-/* XX-Large devices (larger desktops, 1400px and up) */
-@media (min-width: 1400px) {
-}
-
 /* Player form */
 #playerForm {
   width: 400px;
@@ -45,8 +33,6 @@ body {
   margin-right: auto;
   padding: 24px 16px;
   position: absolute;
-  display: flex;
-  transform: translate(-50, 0);
   flex-direction: column;
   background-color: #fff;
   border-radius: 5px;
