@@ -15,5 +15,9 @@ export default class extends Phaser.Scene {
       this.cameras.main.centerX - scoreText.width / 2,
       this.cameras.main.centerY,
     );
+
+    setTimeout(() => {
+      this.scene.start('Title');
+    }, 2000);
   }
 }
