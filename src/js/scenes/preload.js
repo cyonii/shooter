@@ -10,7 +10,7 @@ export default class extends Phaser.Scene {
 
     this.cameraX = this.cameras.main.centerX;
     this.cameraY = this.cameras.main.centerY;
-    const cameraHeight = (this.cameraHeight = this.cameras.main.height);
+    this.cameraHeight = this.cameras.main.height;
     const loadingText = this.add.text(0, 0, '', { fontSize: 24 });
 
     // update progress percentage
@@ -18,7 +18,7 @@ export default class extends Phaser.Scene {
       loadingText.setText(`Loading... ${value * 100}%`);
       loadingText.setPosition(
         this.cameraX - loadingText.width / 2,
-        this.cameraY + cameraHeight * 0.05,
+        this.cameraY + this.cameraHeight * 0.05,
       );
     });
 

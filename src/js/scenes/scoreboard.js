@@ -16,7 +16,7 @@ export default class extends Phaser.Scene {
 
   create() {
     const leaderboardList = this.add.text(0, 0, '');
-    let leaderboardText = `LEADERBOARD\n==============\n\n`;
+    let leaderboardText = 'LEADERBOARD\n==============\n\n';
 
     leaderboard
       .getScores()
