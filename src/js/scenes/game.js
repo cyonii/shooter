@@ -4,7 +4,6 @@ export default class extends Phaser.Scene {
   constructor() {
     super({ key: 'Game' });
     this.baseVelocity = 160;
-    this.score = 0;
   }
 
   preload() {
@@ -15,6 +14,7 @@ export default class extends Phaser.Scene {
 
   create() {
     // Scores
+    this.score = 0;
     this.scoreText = this.add.text(5, 5, `Score: ${this.score}`);
 
     // Player
