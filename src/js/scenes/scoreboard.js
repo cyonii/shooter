@@ -26,7 +26,7 @@ export default class extends Phaser.Scene {
           .reverse()
           .splice(0, 6)
           .forEach((entry) => {
-            leaderboardText += entry.user + ': ' + entry.score + '\n';
+            leaderboardText += `${entry.user}: ${entry.score}\n`;
             leaderboardList.setText(leaderboardText);
             leaderboardList.setPosition(
               this.cameras.main.centerX - leaderboardList.width / 2,

@@ -8,7 +8,7 @@ import ScoreboardScene from './scenes/scoreboard';
 
 const gameContainer = document.getElementById('game');
 
-export default (() => {
+export default (function () {
   return {
     type: Phaser.AUTO,
     width: gameContainer.clientWidth,
