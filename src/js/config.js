@@ -1,7 +1,7 @@
 import BootScene from './scenes/boot';
 import PreloadScene from './scenes/preload';
-import GameScene from './scenes/game';
 import TitleScene from './scenes/title';
+import GameScene from './scenes/game';
 import ScoreboardScene from './scenes/scoreboard';
 
 const gameContainer = document.getElementById('game');
