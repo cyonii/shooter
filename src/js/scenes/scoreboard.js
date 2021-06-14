@@ -1,5 +1,5 @@
 import Phaser from 'phaser';
-import leaderboard from '../api/leaderboard';
+import { getScores } from '../api/leaderboard';
 
 export default class extends Phaser.Scene {
   constructor() {
@@ -18,8 +18,7 @@ export default class extends Phaser.Scene {
     const leaderboardList = this.add.text(0, 0, '');
     let leaderboardText = 'LEADERBOARD\n==============\n\n';
 
-    leaderboard
-      .getScores()
+    getScores()
       .then((data) => {
         data.result
           .sort((a, b) => a.score - b.score)

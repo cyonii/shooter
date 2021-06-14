@@ -1,5 +1,5 @@
 import Phaser from 'phaser';
-import leaderboard from '../api/leaderboard';
+import { postScore } from '../api/leaderboard';
 
 export default class extends Phaser.Scene {
   constructor() {
@@ -89,7 +89,7 @@ export default class extends Phaser.Scene {
       this.scene.pause();
 
       // Post player score
-      leaderboard.postScore.call(this, {
+      postScore.call(this, {
         user: localStorage.getItem('playerName'),
         score: this.score,
       });
