@@ -4,7 +4,6 @@ const baseUrl = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/
 const gameID = 'KUuGABL1NQkjx9MAmI7c';
 
 async function postScore(data) {
-  console.log('posting user score');
   const response = await axios
     .post(`${baseUrl}games/${gameID}/scores/`, data, { mode: 'cors' })
     .then((response) => response.data)
