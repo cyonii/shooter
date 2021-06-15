@@ -1,0 +1,42 @@
+{
+  "name": "shooter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "build": "webpack",
+    "watch": "webpack --watch --mode=development",
+    "serve": "webpack && npx http-server dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cyonii/shooter.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cyonii/shooter/issues"
+  },
+  "homepage": "https://github.com/cyonii/shooter#readme",
+  "devDependencies": {
+    "@babel/core": "^7.14.3",
+    "@babel/plugin-proposal-object-rest-spread": "^7.14.4",
+    "@babel/plugin-transform-runtime": "^7.14.5",
+    "@babel/preset-env": "^7.14.4",
+    "babel-loader": "^8.2.2",
+    "copy-webpack-plugin": "^9.0.0",
+    "file-loader": "^6.2.0",
+    "html-loader": "^2.1.2",
+    "html-webpack-plugin": "^5.3.1",
+    "jest": "^27.0.4",
+    "webpack": "^5.38.1",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev": "^1.1.1"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "phaser": "^3.55.2"
+  }
+}

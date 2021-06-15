@@ -1,0 +1,68 @@
+html {
+  background-color: rgb(15, 15, 15);
+  font-size: 16px;
+  font-family: sans-serif;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+#game {
+  margin: auto;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  #game {
+    width: 700px;
+  }
+}
+
+/* Player form */
+#playerForm {
+  width: 400px;
+  left: 0;
+  right: 0;
+  top: calc(50vh - 75px);
+  margin-left: auto;
+  margin-right: auto;
+  padding: 24px 16px;
+  position: absolute;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 5px;
+  display: none;
+}
+
+#playerForm * {
+  width: auto;
+}
+
+#playerForm input,
+#playerForm button {
+  padding: 0.75rem 1rem;
+  border-radius: 5px;
+  border: 1px solid rgb(39, 39, 39);
+}
+
+#playerForm input {
+  margin-bottom: 0.5rem;
+}
+
+#playerForm button {
+  background-color: dodgerblue;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#playerForm button:hover,
+#playerForm button:active,
+#playerForm button:focus {
+  background-color: rgb(16, 114, 212);
+}
