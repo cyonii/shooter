@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { postScore, getScores } from '../src/js/api/leaderboard';
+import { getScores } from '../src/js/api/leaderboard';
 
 jest.mock('axios');
 
