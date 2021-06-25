@@ -18,7 +18,7 @@
 
 ## About
 
-Space Shooter is a space 2D platformer game. The game include basic game features like collision, movement, obstacles, weapon firing, etc.
+Space Shooter is a space 2D platformer game. The game includes basic game features like collision, movement, obstacles, weapon firing, etc.
 
 ## Live Demo
 
